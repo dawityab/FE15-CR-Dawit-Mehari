@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+    <div class="row" >
+        <h4  id="success-Info" role="alert"> </h4>
+        
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngIf="dish">
+            
+            <div class="card m-1 mx-3 pb-2 cards-style ">
+            <h2 class="detail-pet p-2">Dish Details</h2>
+            <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}"> 
+            <h3 class="card-text text-light bg-warning text-center fs-5 p-2">{{dish.name}}</h3>
+            <h3 class="btn btn-danger w-50 text-center fs-5 p-1 m-2">€{{dish.price}}0 </h3>
+           
+            <p class="card-text text-danger  m-2"><b>Description:</b> {{ dish.describe}}</p>
+            <h3 class="btn btn-success  text-center fs-5 p-1 m-2"(click)="addToCart()" >Order</h3>
+            
+           </div>
+</div>
+    </div>
+</div>
