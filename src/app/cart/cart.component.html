@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="row" > 
+      <div>
+       
+        <h4  id="success-Info" class="m-2 p-2 w-25"role="alert"></h4><br>
+        <h4  id="total"  class=" m-2 p-2 w-25"></h4> 
+        <h4  id="discount-total"  class=" m-2 p-2 w-25"></h4> 
+       </div>
+     
+        <div >
+         <h1 class="bg-light p-2">Cart </h1>
+        </div>
+  <hr>  
+<div class="card-container row row-cols-1 row-cols-md-3 g-3" *ngFor="let dish of dishes">
+    <div class="col">
+        <!-- Card with default left text alignment -->
+        <div class="card">
+            <div class="card-body">
+                <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}">  
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <!-- Card with center text alignment -->
+        <div class="card ">
+            <div class="card-body">
+                <h5 class="card-title">{{dish.name}}</h5>
+                <p class="card-text">{{dish.describe}}</p>
+              
+            </div>
+        </div>
+    </div>
+    <div class="col">
+    <!-- Card with right text alignment -->
+        <div class="card text-end">
+            <div class="card-body">
+                <h5 class="card-title">Price: €{{dish.price}}0</h5>
+             
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+        
+
+           
+    </div>
+</div>
+
+     
+  
+          
+           
+           
+    
+           
+          
+
+
+
+          
+           
+          
+          
+         
+   
+
+      
+     <div class="container-fluid">
+        <div class="row">
+            <h1 class="order-form">Order Form</h1>
+            <p>please fill up the info for the delivery</p>
+            <hr>
+            <form class="formCart" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                <div class="formgroups">
+                    <label for="name">Name</label><br>
+                    <input type="text" class="w-100 my-2 p-2" formControlName="name">
+                </div>
+                <div>
+                    <label for="name">Address</label><br>
+                    <input type="text" class="w-100 my-2 p-2" formControlName="address">
+                </div>
+              <button class="btn btn-primary my-4 p-2" type="submit">Purchase</button>
+          </form>
+        </div>
+    </div>
+
+       
+      
+        
+     
+  
+

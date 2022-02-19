@@ -1,0 +1,24 @@
+.card-container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.card{
+    border: 0;
+}
+
+
+.card-img-top{
+   
+    width: 100%;
+   height:fit-content;
+    -o-object-fit: cover;
+       object-fit: cover;
+       
+}
+.order-form{
+    font-family: 'Great Vibes', cursive;
+    font-size:4rem;
+    padding-top: 100px;
+    font-weight: bold;
+}
