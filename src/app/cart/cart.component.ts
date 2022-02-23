@@ -16,49 +16,68 @@ checkoutForm = new FormGroup({
 
 })
   constructor(private cartService: CartService) { }
+  singleDishPrice(){
+   let total: number = 0;
+    for(let dish of this.dishes){
+     total += dish.price;
+        }
+        return total;
+        
+    
+  }
+  service(): number{
+    return  (10/100) * this.singleDishPrice();  
+   
+   
+}
+  // discount(){
+  // let total: number = this.singleDishPrice() + this.service();
+  
+  //  if(total >= 40){
+  //  return total  * 0.15;
+  //  }
+  
+  
+   
+  // }
+  total(): number{
+    return (this.singleDishPrice() + this.service())
+  }
+
+
  
+
 successInfo: string= "Your order has been submitted";
 rejectInfo: string= "Invalid user information. Please check again";
 
 
-onClick()
-{
+onSubmit(){
 
-(document.getElementById("total1")as HTMLElement).innerHTML = `Total cost - ${this.cartService.total().toFixed(2)} €`;
-(document.getElementById("total1")as HTMLElement).classList.add("btn-warning");
-}
-
-  onSubmit(){
-    if(this.checkoutForm.valid){
-      this.checkoutForm.value;
-    
-     (document.getElementById("total")as HTMLElement).innerHTML = `Total cost with 10% Service - ${this.cartService.total().toFixed(2)} €`;
-      (document.getElementById("total")as HTMLElement).classList.add("alert-warning");
-      (document.getElementById("success-Info")as HTMLElement).innerHTML = this.successInfo;
-      (document.getElementById("success-Info")as HTMLElement).classList.add("alert-success");
-      this.dishes = this.cartService.clearCart();
-     
-      this.checkoutForm.reset();
-    }
-    else{
-      (document.getElementById("success-Info")as HTMLElement).innerHTML = this.rejectInfo;
-      (document.getElementById("success-Info")as HTMLElement).classList.add("alert-danger");
-      
-    }
-    if(this.cartService.total() >= 40){
-      (document.getElementById("discount-total")as HTMLElement).innerHTML = `Total cost with 15% discount - ${this.cartService.discount().toFixed(2)} €`;
-      (document.getElementById("discount-total")as HTMLElement).classList.add("alert-warning");
-      (document.getElementById("total")as HTMLElement).innerHTML = `Total cost with 10% Service - ${this.cartService.total().toFixed(2)} €`;
-      (document.getElementById("total")as HTMLElement).classList.add("alert-warning");
-    
-    }
+  if(this.checkoutForm.valid){
+    this.checkoutForm.value;
+  
+ 
+    (document.getElementById("success-Info")as HTMLElement).innerHTML = this.successInfo;
+    (document.getElementById("success-Info")as HTMLElement).classList.add("alert-success");
+    this.dishes = this.cartService.clearCart();
    
-   
+    this.checkoutForm.reset();
   }
-
+  else{
+    (document.getElementById("success-Info")as HTMLElement).innerHTML = this.rejectInfo;
+    (document.getElementById("success-Info")as HTMLElement).classList.add("alert-danger");
+    
+  }
+    
+    }
+    
   ngOnInit(): void {
     this.dishes = this.cartService.getDishes();
+   
     
+    
+     
   }
 
 }
+

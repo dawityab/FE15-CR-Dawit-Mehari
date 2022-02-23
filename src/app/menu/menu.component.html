@@ -3,12 +3,12 @@
         <h1 class="title text-center">Our specialties</h1>
         <hr>
         <h5  id="success-Info" role="alert"> </h5>
-       <!-- <ng-template [ngIf]="dish">  -->
-          
-            <div  *ngFor="let dish of dishes" class="col-lg-4 col-md-6 col-sm-12">
+       
+        <!-- <div *ngIf="dishes.length > 0"> -->
+            <div  *ngFor="let dish of dishes; index as dishId" class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card m-1 mx-3 mb-4 pb-2 cards-style" >
-                      
-               <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}"> 
+                          
+                <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}"> 
                 <h3 class="card-text text-dark bg-warning text-center fs-5 p-2">{{dish.name}}</h3>
                 <p class="card-text text-dark fs-6 m-2"> {{dish.describe}}</p>
                 <hr>
@@ -21,7 +21,7 @@
                 <ng-template #none>
                     <span>
                         <h3 class="btn btn-primary  text-center w-25 p-2 mx-2" id="detail" routerLink="/dishes/{{dish.id}}" >Details</h3>
-                        <h3 class="btn btn-success  text-center w-25 p-2 mx-2" id="order"  (click)="addToCart()">Order</h3>
+                        <h3 class="btn btn-success  text-center w-25 p-2 mx-2" id="order"  (click)="addToCart(dishId)">Order</h3>
                          
                     </span>
                 </ng-template>
@@ -30,8 +30,8 @@
             </div>
   
           </div>
-       
-    <!-- </ng-template> -->
+        <!-- </div>
+   -->
           
         </div>
  
