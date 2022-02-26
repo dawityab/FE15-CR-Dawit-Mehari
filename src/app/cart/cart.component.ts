@@ -30,18 +30,19 @@ checkoutForm = new FormGroup({
    
    
 }
-  // discount(){
-  // let total: number = this.singleDishPrice() + this.service();
-  
-  //  if(total >= 40){
-  //  return total  * 0.15;
-  //  }
+  discount(): number{
+  let total: number = this.singleDishPrice() + this.service();
+  let discount: number = 0;
+   if(total >= 40){
+  discount = total  * 0.15;
+   }
+   return discount;
   
   
    
-  // }
+  }
   total(): number{
-    return (this.singleDishPrice() + this.service())
+    return ((this.singleDishPrice() + this.service())- this.discount())
   }
 
 
