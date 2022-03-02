@@ -22,3 +22,40 @@
     padding-top: 100px;
     font-weight: bold;
 }
+.summary{
+    background-color: rgb(53, 240, 178);
+    padding: 30px;
+    margin: 30px;
+    width: 50%;
+}
+.quantity-icons{
+    /* border: 1px solid blue; */
+    border-radius: 50%;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    display:inline-block;
+    text-align: center;
+    margin: 3px;
+   
+    
+}
+.quantity-icons:hover{
+   
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+   
+   
+    
+}
+
+
+
+@media (max-width: 767.98px) { 
+
+    .summary-info-titles{
+       display: none;
+    }
+}

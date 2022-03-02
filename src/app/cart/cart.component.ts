@@ -45,6 +45,19 @@ checkoutForm = new FormGroup({
     return ((this.singleDishPrice() + this.service())- this.discount())
   }
 
+  // minus(i:number):number {
+  //   let quantityAddToCart = 0;
+  //   quantityAddToCart = this.cartService.remove(i);
+  //   return quantityAddToCart;
+   
+  // }
+  // add(i:number):number {
+  //   let quantityAddToCart = 0;
+  //   quantityAddToCart = this.cartService.add(i);
+  //   return quantityAddToCart;
+   
+  // }
+
 
  
 

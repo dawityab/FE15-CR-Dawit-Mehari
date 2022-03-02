@@ -12,6 +12,19 @@ dishes: IDishes[] = [];
   addToCart(dish:IDishes){
     this.dishes.push(dish);
   }
+
+//   remove(id: number): number{
+//   let dishesItems =this.dishes;
+//   let dishItem = dishesItems[id];
+//   dishItem.quantity--;
+//   return dishItem.quantity;
+// }
+// add(id: number): number{
+//   let dishesItems =this.dishes;
+//   let dishItem = dishesItems[id];
+//   dishItem.quantity++;
+//   return dishItem.quantity;
+// }
   getDishes(){
      
     return this.dishes;

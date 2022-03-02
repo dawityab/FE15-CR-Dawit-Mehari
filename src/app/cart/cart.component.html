@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row" > 
-      <div>
+      <div class="summary">
        <h3>Summary</h3>
         <h6  id="success-Info" class="m-2 p-2 w-25"role="alert">Prodcuts €{{singleDishPrice().toFixed(2) }}</h6><br>
         <h6  id="total"  class=" m-2 p-2 w-25">Service €{{service().toFixed(2) }}</h6> 
@@ -13,11 +13,27 @@
          <h1 class="bg-light p-2 card-header">Cart </h1>
         </div>
   <hr>  
+  <div class="card-container row row-cols-1 row-cols-md-4 summary-info-titles">
+    <div class="col">
+        <h3>ITEM</h3>  
+    </div>
+    <div class="col">
+        <h3>DESCRIPTION</h3>  
+    </div>
+    <div class="col">
+        <h3 class="text-end">PRICE</h3>  
+    </div>
+    <div class="col">
+        <h3 class="text-end">QUANTITY</h3>
+    </div>
+
+  </div>
 <div class="card-container row row-cols-1 row-cols-md-4 g-3" *ngFor="let dish of dishes">
     <div class="col">
         <!-- Card with default left text alignment -->
         <div class="card">
             <div class="card-body">
+                
                 <img src="{{dish.image}}" class="card-img-top" alt="{{dish.name}}">  
             </div>
         </div>
@@ -26,6 +42,7 @@
         <!-- Card with center text alignment -->
         <div class="card ">
             <div class="card-body">
+               
                 <h5 class="card-title">{{dish.name}}</h5>
                 <p class="card-text">{{dish.describe}}</p>
               
@@ -36,6 +53,7 @@
     <!-- Card with right text alignment -->
         <div class="card text-end">
             <div class="card-body">
+               
                 <h5 class="card-title">Price: €{{dish.price}}0</h5>
              
             </div>
@@ -43,7 +61,17 @@
         
 </div>
     <!-- Card with center text alignment -->
-   
+    <div class="col">
+        <!-- Card with right text alignment -->
+            <div class="card text-end">
+                <div class="card-body">
+                    <h5 class="card-title quantity-icons  "> {{ dish.quantity }}</h5>       
+<!-- <span>  <p class="quantity-icons bg-warning text-light text-center" id="minus"(click)="minus(dish.quantity)" >-</p> <h5 class="card-title quantity-icons  "> {{ dish.quantity }}</h5> <p class="quantity-icons bg-success text-light text-center"id="plus" (click)="add(dish.quantity)">+</p><p class="quantity-icons bg-danger text-light text-center" id="del"  >x</p></span>  -->
+                 
+                </div>
+            </div>
+            
+    </div> 
 </div>
 
 <hr>
